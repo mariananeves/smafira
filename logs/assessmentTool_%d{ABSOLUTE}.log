@@ -1,0 +1,39 @@
+2015-04-30 13:12:13,465 [Thread-8] WARN  util.GrailsUtil  - [WARNING] Property [refDoc] of domain class assessmenttool.PubmedResultDocument has type [assessmenttool.PubmedReferenceDocument] and doesn't support constraint [blank]. This constraint will not be checked during validation.
+2015-04-30 13:12:13,471 [Thread-8] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\Config.groovy] changed. Applying changes to application.
+2015-04-30 13:12:13,520 [Thread-12] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\Config.groovy] changed. Applying changes to application.
+2015-04-30 13:12:13,965 [FileSystemWatcher: files=#170 cl=groovy.lang.GroovyClassLoader@3dd60834] WARN  util.GrailsUtil  - [WARNING] Property [refDoc] of domain class assessmenttool.PubmedResultDocument has type [assessmenttool.PubmedReferenceDocument] and doesn't support constraint [blank]. This constraint will not be checked during validation.
+2015-04-30 13:19:31,168 [Thread-12] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\BuildConfig.groovy] added. Applying changes to application.
+2015-04-30 13:19:31,169 [Thread-8] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\BuildConfig.groovy] added. Applying changes to application.
+2015-04-30 13:19:36,550 [Thread-12] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\BuildConfig.groovy] changed. Applying changes to application.
+2015-04-30 13:19:36,696 [Thread-8] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\BuildConfig.groovy] changed. Applying changes to application.
+2015-04-30 13:19:37,653 [FileSystemWatcher: files=#170 cl=groovy.lang.GroovyClassLoader@3dd60834] ERROR agent.Watcher  - FileWatcher caught serious error, see cause
+java.lang.LinkageError: loader (instance of  org/springsource/loaded/ChildClassLoader): attempted  duplicate class definition for name: "BuildConfig$$DPBKwJlt"
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:791)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:634)
+	at java.lang.Thread.run(Thread.java:722)
+2015-04-30 13:20:05,351 [Thread-8] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\BuildConfig.groovy] added. Applying changes to application.
+2015-04-30 13:20:05,353 [Thread-12] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\BuildConfig.groovy] added. Applying changes to application.
+2015-04-30 13:20:10,695 [Thread-12] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\BuildConfig.groovy] changed. Applying changes to application.
+2015-04-30 13:20:10,722 [Thread-8] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\BuildConfig.groovy] changed. Applying changes to application.
+2015-04-30 13:23:01,490 [Thread-8] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\BuildConfig.groovy] added. Applying changes to application.
+2015-04-30 13:23:01,491 [Thread-12] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\BuildConfig.groovy] added. Applying changes to application.
+2015-04-30 13:23:06,840 [Thread-12] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\BuildConfig.groovy] changed. Applying changes to application.
+2015-04-30 13:23:06,858 [Thread-8] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\BuildConfig.groovy] changed. Applying changes to application.
+2015-04-30 13:23:44,196 [Thread-8] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\BuildConfig.groovy] added. Applying changes to application.
+2015-04-30 13:23:44,198 [Thread-12] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\BuildConfig.groovy] added. Applying changes to application.
+2015-04-30 13:23:49,601 [Thread-12] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\BuildConfig.groovy] changed. Applying changes to application.
+2015-04-30 13:23:49,614 [Thread-8] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\BuildConfig.groovy] changed. Applying changes to application.
+2015-04-30 13:24:13,484 [Thread-8] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\BuildConfig.groovy] added. Applying changes to application.
+2015-04-30 13:24:13,485 [Thread-12] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\BuildConfig.groovy] added. Applying changes to application.
+2015-04-30 13:24:18,786 [Thread-12] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\BuildConfig.groovy] changed. Applying changes to application.
+2015-04-30 13:24:18,803 [Thread-8] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\BuildConfig.groovy] changed. Applying changes to application.
+2015-04-30 13:26:15,224 [Thread-12] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\BuildConfig.groovy] added. Applying changes to application.
+2015-04-30 13:26:15,226 [Thread-8] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\BuildConfig.groovy] added. Applying changes to application.
+2015-04-30 13:26:20,546 [Thread-12] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\BuildConfig.groovy] changed. Applying changes to application.
+2015-04-30 13:26:20,576 [Thread-8] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\BuildConfig.groovy] changed. Applying changes to application.
+2015-04-30 13:27:46,611 [Thread-8] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\BuildConfig.groovy] added. Applying changes to application.
+2015-04-30 13:27:46,612 [Thread-12] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\BuildConfig.groovy] added. Applying changes to application.
+2015-04-30 13:27:51,942 [Thread-12] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\BuildConfig.groovy] changed. Applying changes to application.
+2015-04-30 13:27:51,951 [Thread-8] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\BuildConfig.groovy] changed. Applying changes to application.
+2015-04-30 13:36:42,785 [Thread-12] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\Config.groovy] added. Applying changes to application.
+2015-04-30 13:36:42,785 [Thread-8] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\Config.groovy] added. Applying changes to application.

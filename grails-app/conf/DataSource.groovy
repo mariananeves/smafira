@@ -25,6 +25,7 @@ environments {
             dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
 //            url = "jdbc:mysql://localhost/pubmed_assessments"
             url = "jdbc:postgresql://fuedb.gesis.intra/assessment-test"
+            logSql = true
         }
     }
     test {
@@ -36,6 +37,7 @@ environments {
     }
     production {
         dataSource {
+            logSql = true
             dbCreate = "update"
 //            url = "jdbc:mysql://localhost/pubmed_assessments"
             url = "jdbc:postgresql://fuedb.gesis.intra/assessment"

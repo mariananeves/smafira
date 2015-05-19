@@ -1,3 +1,5 @@
+import org.apache.log4j.DailyRollingFileAppender
+
 // locations to search for config files that get merged into the main config;
 // config files can be ConfigSlurper scripts, Java properties files, or classes
 // in the classpath in ConfigSlurper format
@@ -102,6 +104,21 @@ log4j.main = {
     //appenders {
     //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
     //}
+
+    appenders{
+        appender new DailyRollingFileAppender(
+                name: 'dailyAppender',
+                datePattern: "'.'yyyy-MM-dd",
+                fileName: "logs/assessmentTool.log",
+                layout: pattern(conversionPattern:'%d [%t] %-5p %c{2} %x - %m%n')
+        )
+    }
+
+    trace 'org.hibernate.type.descriptor.sql.BasicBinder'
+    debug 'org.hibernate.SQL'
+    root{
+        info 'dailyAppender'
+    }
 
     error  'org.codehaus.groovy.grails.web.servlet',        // controllers
            'org.codehaus.groovy.grails.web.pages',          // GSP

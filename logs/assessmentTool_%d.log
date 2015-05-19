@@ -1,0 +1,15 @@
+2015-04-30 13:10:06,371 [Thread-12] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\Config.groovy] changed. Applying changes to application.
+2015-04-30 13:10:06,605 [Thread-8] WARN  util.GrailsUtil  - [WARNING] Property [refDoc] of domain class assessmenttool.PubmedResultDocument has type [assessmenttool.PubmedReferenceDocument] and doesn't support constraint [blank]. This constraint will not be checked during validation.
+2015-04-30 13:10:06,616 [Thread-8] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\Config.groovy] changed. Applying changes to application.
+2015-04-30 13:10:07,025 [FileSystemWatcher: files=#170 cl=groovy.lang.GroovyClassLoader@3dd60834] ERROR agent.Watcher  - FileWatcher caught serious error, see cause
+java.lang.LinkageError: loader (instance of  org/springsource/loaded/ChildClassLoader): attempted  duplicate class definition for name: "Config$_run_closure1_closure5_closure6$$DPBKtvId"
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:791)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:634)
+	at java.lang.Thread.run(Thread.java:722)
+2015-04-30 13:10:07,127 [FileSystemWatcher: files=#170 cl=groovy.lang.GroovyClassLoader@3dd60834] ERROR agent.Watcher  - FileWatcher caught serious error, see cause
+java.lang.LinkageError: loader (instance of  org/springsource/loaded/ChildClassLoader): attempted  duplicate class definition for name: "Config$$DPBKtvIG"
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:791)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:634)
+	at java.lang.Thread.run(Thread.java:722)
+2015-04-30 13:12:07,645 [Thread-12] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\Config.groovy] added. Applying changes to application.
+2015-04-30 13:12:07,646 [Thread-8] INFO  compiler.GrailsProjectWatcher  - File [C:\Users\du\IdeaProjects\AssessmentTool\grails-app\conf\Config.groovy] added. Applying changes to application.

@@ -1,0 +1,97 @@
+2015-04-28 20:39:48,512 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2015-04-28 20:39:48,794 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+2015-04-28 20:39:50,268 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2015-04-28 20:39:50,276 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+2015-04-28 20:40:04,197 [localhost-startStop-1] INFO  [localhost].[/AssessmentTool]  - Initializing Spring root WebApplicationContext
+2015-04-28 20:40:12,589 [localhost-startStop-1] INFO  hibernate4.HibernatePluginSupport  - Set db generation strategy to 'update' for datasource DEFAULT
+2015-04-28 20:40:13,535 [localhost-startStop-1] ERROR context.GrailsContextLoaderListener  - Error initializing the application: No datastore implementation specified
+java.lang.Exception: No datastore implementation specified
+	at ElasticsearchGrailsPlugin$_closure1.doCall(ElasticsearchGrailsPlugin.groovy:135)
+	at grails.spring.BeanBuilder.invokeBeanDefiningClosure(BeanBuilder.java:754)
+	at grails.spring.BeanBuilder.beans(BeanBuilder.java:584)
+	at grails.spring.BeanBuilder.invokeMethod(BeanBuilder.java:527)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+2015-04-28 20:43:44,773 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2015-04-28 20:43:44,805 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+2015-04-28 20:43:45,201 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2015-04-28 20:43:45,206 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+2015-04-28 20:43:50,360 [localhost-startStop-1] INFO  [localhost].[/AssessmentTool]  - Initializing Spring root WebApplicationContext
+2015-04-28 20:43:55,522 [localhost-startStop-1] INFO  hibernate4.HibernatePluginSupport  - Set db generation strategy to 'update' for datasource DEFAULT
+2015-04-28 20:43:56,712 [localhost-startStop-1] INFO  cache.CacheBeanPostProcessor  - postProcessBeanDefinitionRegistry start
+2015-04-28 20:43:56,742 [localhost-startStop-1] INFO  cache.CacheBeanPostProcessor  - postProcessBeanFactory
+2015-04-28 20:43:59,413 [localhost-startStop-1] WARN  util.GrailsUtil  - [WARNING] Property [refDoc] of domain class assessmenttool.PubmedResultDocument has type [assessmenttool.PubmedReferenceDocument] and doesn't support constraint [blank]. This constraint will not be checked during validation.
+2015-04-28 20:44:00,171 [localhost-startStop-1] WARN  config.ConfigurationFactory  - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/du/.m2/repository/net/sf/ehcache/ehcache-core/2.4.8/ehcache-core-2.4.8.jar!/ehcache-failsafe.xml
+2015-04-28 20:44:05,429 [localhost-startStop-1] INFO  scaffolding.AbstractGrailsTemplateGenerator  - Scaffolding template generator set to use resource loader [org.codehaus.groovy.grails.commons.spring.GrailsWebApplicationContext@6fe15625: startup date [Tue Apr 28 20:43:55 CEST 2015]; parent: Root WebApplicationContext]
+2015-04-28 20:44:11,230 [localhost-startStop-1] INFO  databasemigration.MigrationRunner  - updateOnStart disabled for dataSource; not running migrations
+2015-04-28 20:44:11,293 [localhost-startStop-1] INFO  ScaffoldingGrailsPlugin  - configuring scaffolding...
+2015-04-28 20:44:11,299 [localhost-startStop-1] INFO  ScaffoldingGrailsPlugin  - done configuring scaffolding.
+2015-04-28 20:44:11,539 [localhost-startStop-1] WARN  util.GrailsUtil  - [WARNING] Property [refDoc] of domain class assessmenttool.PubmedResultDocument has type [assessmenttool.PubmedReferenceDocument] and doesn't support constraint [blank]. This constraint will not be checked during validation.
+2015-04-28 20:44:11,540 [localhost-startStop-1] INFO  context.GrailsConfigUtils  - [GrailsContextLoader] Grails application loaded.
+2015-04-28 20:44:12,038 [localhost-startStop-1] INFO  [localhost].[/AssessmentTool]  - Initializing Spring FrameworkServlet 'grails'
+2015-04-28 20:44:12,259 [main] INFO  http11.Http11Protocol  - Starting ProtocolHandler ["http-bio-8080"]
+2015-04-28 21:03:50,896 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2015-04-28 21:03:50,925 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+2015-04-28 21:03:51,151 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2015-04-28 21:03:51,156 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+2015-04-28 21:03:53,784 [main] INFO  hibernate4.HibernatePluginSupport  - Set db generation strategy to 'update' for datasource DEFAULT
+2015-04-28 21:03:54,534 [main] INFO  cache.CacheBeanPostProcessor  - postProcessBeanDefinitionRegistry start
+2015-04-28 21:03:54,543 [main] INFO  cache.CacheBeanPostProcessor  - postProcessBeanFactory
+2015-04-28 21:03:56,204 [main] WARN  util.GrailsUtil  - [WARNING] Property [refDoc] of domain class assessmenttool.PubmedResultDocument has type [assessmenttool.PubmedReferenceDocument] and doesn't support constraint [blank]. This constraint will not be checked during validation.
+2015-04-28 21:03:56,432 [main] WARN  config.ConfigurationFactory  - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/du/.m2/repository/net/sf/ehcache/ehcache-core/2.4.8/ehcache-core-2.4.8.jar!/ehcache-failsafe.xml
+2015-04-28 21:04:53,680 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2015-04-28 21:04:53,706 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+2015-04-28 21:04:54,108 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2015-04-28 21:04:54,116 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+2015-04-28 21:05:01,797 [localhost-startStop-1] INFO  [localhost].[/AssessmentTool]  - Initializing Spring root WebApplicationContext
+2015-04-28 21:05:08,326 [localhost-startStop-1] INFO  hibernate4.HibernatePluginSupport  - Set db generation strategy to 'update' for datasource DEFAULT
+2015-04-28 21:05:09,033 [localhost-startStop-1] INFO  cache.CacheBeanPostProcessor  - postProcessBeanDefinitionRegistry start
+2015-04-28 21:05:09,041 [localhost-startStop-1] INFO  cache.CacheBeanPostProcessor  - postProcessBeanFactory
+2015-04-28 21:05:11,136 [localhost-startStop-1] WARN  util.GrailsUtil  - [WARNING] Property [refDoc] of domain class assessmenttool.PubmedResultDocument has type [assessmenttool.PubmedReferenceDocument] and doesn't support constraint [blank]. This constraint will not be checked during validation.
+2015-04-28 21:05:11,401 [localhost-startStop-1] WARN  config.ConfigurationFactory  - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/du/.m2/repository/net/sf/ehcache/ehcache-core/2.4.8/ehcache-core-2.4.8.jar!/ehcache-failsafe.xml
+2015-04-28 21:05:13,315 [localhost-startStop-1] ERROR context.GrailsContextLoaderListener  - Error initializing the application: Error creating bean with name 'grailsApplicationPostProcessor': BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.config.internalTransactionAdvisor': Cannot resolve reference to bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0' while setting bean property 'transactionAttributeSource'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0': Initialization of bean failed; nested exception is java.lang.NoSuchMethodError: org.springframework.cache.annotation.CacheAnnotationParser.parseCacheAnnotations(Ljava/lang/reflect/AnnotatedElement;)Ljava/util/Collection;
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'grailsApplicationPostProcessor': BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.config.internalTransactionAdvisor': Cannot resolve reference to bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0' while setting bean property 'transactionAttributeSource'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0': Initialization of bean failed; nested exception is java.lang.NoSuchMethodError: org.springframework.cache.annotation.CacheAnnotationParser.parseCacheAnnotations(Ljava/lang/reflect/AnnotatedElement;)Ljava/util/Collection;
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.config.internalTransactionAdvisor': Cannot resolve reference to bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0' while setting bean property 'transactionAttributeSource'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0': Initialization of bean failed; nested exception is java.lang.NoSuchMethodError: org.springframework.cache.annotation.CacheAnnotationParser.parseCacheAnnotations(Ljava/lang/reflect/AnnotatedElement;)Ljava/util/Collection;
+	... 5 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0': Initialization of bean failed; nested exception is java.lang.NoSuchMethodError: org.springframework.cache.annotation.CacheAnnotationParser.parseCacheAnnotations(Ljava/lang/reflect/AnnotatedElement;)Ljava/util/Collection;
+	... 5 more
+Caused by: java.lang.NoSuchMethodError: org.springframework.cache.annotation.CacheAnnotationParser.parseCacheAnnotations(Ljava/lang/reflect/AnnotatedElement;)Ljava/util/Collection;
+	at grails.plugin.cache.GrailsAnnotationCacheOperationSource.findCacheOperations(GrailsAnnotationCacheOperationSource.java:218)
+	at grails.plugin.cache.GrailsAnnotationCacheOperationSource.computeCacheOperations(GrailsAnnotationCacheOperationSource.java:174)
+	at grails.plugin.cache.GrailsAnnotationCacheOperationSource.doGetCacheOperations(GrailsAnnotationCacheOperationSource.java:121)
+	at grails.plugin.cache.GrailsAnnotationCacheOperationSource.getCacheOperations(GrailsAnnotationCacheOperationSource.java:104)
+	... 5 more
+2015-04-28 21:12:39,988 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2015-04-28 21:12:40,024 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+2015-04-28 21:12:40,951 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2015-04-28 21:12:40,958 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+2015-04-28 21:12:47,317 [localhost-startStop-1] INFO  [localhost].[/AssessmentTool]  - Initializing Spring root WebApplicationContext
+2015-04-28 21:12:54,533 [localhost-startStop-1] INFO  hibernate4.HibernatePluginSupport  - Set db generation strategy to 'update' for datasource DEFAULT
+2015-04-28 21:12:56,045 [localhost-startStop-1] INFO  cache.CacheBeanPostProcessor  - postProcessBeanDefinitionRegistry start
+2015-04-28 21:12:56,066 [localhost-startStop-1] INFO  cache.CacheBeanPostProcessor  - postProcessBeanFactory
+2015-04-28 21:12:59,268 [localhost-startStop-1] WARN  util.GrailsUtil  - [WARNING] Property [refDoc] of domain class assessmenttool.PubmedResultDocument has type [assessmenttool.PubmedReferenceDocument] and doesn't support constraint [blank]. This constraint will not be checked during validation.
+2015-04-28 21:12:59,741 [localhost-startStop-1] WARN  config.ConfigurationFactory  - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/du/.m2/repository/net/sf/ehcache/ehcache-core/2.4.8/ehcache-core-2.4.8.jar!/ehcache-failsafe.xml
+2015-04-28 21:13:05,675 [localhost-startStop-1] INFO  scaffolding.AbstractGrailsTemplateGenerator  - Scaffolding template generator set to use resource loader [org.codehaus.groovy.grails.commons.spring.GrailsWebApplicationContext@57569763: startup date [Tue Apr 28 21:12:55 CEST 2015]; parent: Root WebApplicationContext]
+2015-04-28 21:13:11,124 [localhost-startStop-1] INFO  databasemigration.MigrationRunner  - updateOnStart disabled for dataSource; not running migrations
+2015-04-28 21:13:11,187 [localhost-startStop-1] INFO  ScaffoldingGrailsPlugin  - configuring scaffolding...
+2015-04-28 21:13:11,192 [localhost-startStop-1] INFO  ScaffoldingGrailsPlugin  - done configuring scaffolding.
+2015-04-28 21:13:11,309 [localhost-startStop-1] WARN  util.GrailsUtil  - [WARNING] Property [refDoc] of domain class assessmenttool.PubmedResultDocument has type [assessmenttool.PubmedReferenceDocument] and doesn't support constraint [blank]. This constraint will not be checked during validation.
+2015-04-28 21:13:11,310 [localhost-startStop-1] INFO  context.GrailsConfigUtils  - [GrailsContextLoader] Grails application loaded.
+2015-04-28 21:13:11,722 [localhost-startStop-1] INFO  [localhost].[/AssessmentTool]  - Initializing Spring FrameworkServlet 'grails'
+2015-04-28 21:13:11,909 [main] INFO  http11.Http11Protocol  - Starting ProtocolHandler ["http-bio-8080"]
+2015-04-28 21:13:20,470 [http-bio-8080-exec-10] INFO  [localhost].[/AssessmentTool]  - Initializing Spring FrameworkServlet 'gsp'
+2015-04-28 21:13:20,470 [http-bio-8080-exec-10] INFO  [localhost].[/AssessmentTool]  - GSP servlet initialized
+2015-04-28 21:13:28,205 [http-bio-8080-exec-10] DEBUG hibernate.SQL  - select count(*) as y0_ from pubmed_reference_document this_
+2015-04-28 21:13:28,303 [http-bio-8080-exec-10] DEBUG hibernate.SQL  - select this_.id as id1_0_0_, this_.version as version2_0_0_, this_.pmid as pmid3_0_0_, this_.title as title4_0_0_ from pubmed_reference_document this_ limit ?
+2015-04-28 21:13:35,863 [http-bio-8080-exec-6] DEBUG hibernate.SQL  - select pubmedrefe0_.id as id1_0_0_, pubmedrefe0_.version as version2_0_0_, pubmedrefe0_.pmid as pmid3_0_0_, pubmedrefe0_.title as title4_0_0_ from pubmed_reference_document pubmedrefe0_ where pubmedrefe0_.id=?
+2015-04-28 21:13:35,883 [http-bio-8080-exec-6] TRACE sql.BasicBinder  - binding parameter [1] as [BIGINT] - [1]
+2015-04-28 21:13:36,095 [http-bio-8080-exec-6] DEBUG hibernate.SQL  - select this_.id as id1_1_0_, this_.version as version2_1_0_, this_.doc_abstract as doc_abst3_1_0_, this_.is_animal_test as is_anima4_1_0_, this_.last_change as last_cha5_1_0_, this_.pmcid as pmcid6_1_0_, this_.pmid as pmid7_1_0_, this_.rank as rank8_1_0_, this_.ref_doc_id as ref_doc_9_1_0_, this_.relevance as relevan10_1_0_, this_.relevance2 as relevan11_1_0_, this_.title as title12_1_0_ from pubmed_result_document this_ where this_.ref_doc_id=?
+2015-04-28 21:13:36,097 [http-bio-8080-exec-6] TRACE sql.BasicBinder  - binding parameter [1] as [BIGINT] - [1]
