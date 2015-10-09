@@ -31,17 +31,17 @@ invokeTag('message','g',25,['code':("pubmedResultDocument.refDoc.label"),'defaul
 printHtmlPart(2)
 invokeTag('select','g',29,['id':("refDoc"),'name':("refDoc.id"),'from':(assessmenttool.PubmedReferenceDocument.list()),'optionKey':("id"),'required':(""),'value':(pubmedResultDocumentInstance?.refDoc?.id),'class':("many-to-one")],-1)
 printHtmlPart(3)
-expressionOut.print(hasErrors(bean: pubmedResultDocumentInstance, field: 'relevance', 'error'))
+expressionOut.print(hasErrors(bean: pubmedResultDocumentInstance, field: 'similarity', 'error'))
 printHtmlPart(6)
-invokeTag('message','g',35,['code':("pubmedResultDocument.relevance.label"),'default':("Relevance")],-1)
+invokeTag('message','g',35,['code':("pubmedResultDocument.similarity.label"),'default':("Similarity")],-1)
 printHtmlPart(7)
-invokeTag('field','g',38,['name':("relevance"),'type':("number"),'value':(pubmedResultDocumentInstance.relevance)],-1)
+invokeTag('field','g',38,['name':("similarity"),'type':("number"),'value':(pubmedResultDocumentInstance.similarity)],-1)
 printHtmlPart(3)
-expressionOut.print(hasErrors(bean: pubmedResultDocumentInstance, field: 'relevance2', 'error'))
+expressionOut.print(hasErrors(bean: pubmedResultDocumentInstance, field: 'relevance', 'error'))
 printHtmlPart(8)
-invokeTag('message','g',44,['code':("pubmedResultDocument.relevance2.label"),'default':("Relevance2")],-1)
+invokeTag('message','g',44,['code':("pubmedResultDocument.relevance.label"),'default':("Relevance")],-1)
 printHtmlPart(7)
-invokeTag('field','g',47,['name':("relevance2"),'type':("number"),'value':(pubmedResultDocumentInstance.relevance2)],-1)
+invokeTag('field','g',47,['name':("relevance"),'type':("number"),'value':(pubmedResultDocumentInstance.relevance)],-1)
 printHtmlPart(3)
 expressionOut.print(hasErrors(bean: pubmedResultDocumentInstance, field: 'isAnimalTest', 'error'))
 printHtmlPart(9)
@@ -79,7 +79,7 @@ protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1425480045483L
+public static final long LAST_MODIFIED = 1432058048179L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

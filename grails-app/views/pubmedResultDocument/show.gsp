@@ -63,20 +63,20 @@
 
 
             <li class="fieldcontain">
-                <span id="relevance-label" class="property-label"><g:message code="pubmedResultDocument.relevance.label"
-                                                                             default="Relevance"/></span>
+                <span id="similarity-label" class="property-label"><g:message code="pubmedResultDocument.similarity.label"
+                                                                             default="Similarity"/></span>
 
-                <span class="property-value" aria-labelledby="relevance-label"><g:fieldValue
-                        bean="${pubmedResultDocumentInstance}" field="relevance"/></span>
+                <span class="property-value" aria-labelledby="similarity-label"><g:fieldValue
+                        bean="${pubmedResultDocumentInstance}" field="similarity"/></span>
 
             </li>
 
         <li class="fieldcontain">
-            <span id="relevance2-label" class="property-label"><g:message code="pubmedResultDocument.relevance2.label"
-                                                                         default="Relevance2"/></span>
+            <span id="relevance-label" class="property-label"><g:message code="pubmedResultDocument.relevance.label"
+                                                                         default="Relevance"/></span>
 
-            <span class="property-value" aria-labelledby="relevance2-label"><g:fieldValue
-                    bean="${pubmedResultDocumentInstance}" field="relevance2"/></span>
+            <span class="property-value" aria-labelledby="relevance-label"><g:fieldValue
+                    bean="${pubmedResultDocumentInstance}" field="relevance"/></span>
 
         </li>
 

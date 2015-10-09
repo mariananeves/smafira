@@ -191,7 +191,7 @@ img {
 	text-decoration: underline;
 }
 
-.nav a.home, .nav a.list, .nav a.create {
+.nav a.home, .nav a.list, .nav a.create, .nav a.corpus, .nav a.datamining {
 	background-position: 0.7em center;
 	background-repeat: no-repeat;
 	text-indent: 25px;
@@ -208,6 +208,16 @@ img {
 .nav a.create {
 	background-image: url(../images/skin/database_add.png);
 }
+
+.nav a.corpus {
+	background-image: url(../images/skin/database_add.png);
+}
+
+.nav a.datamining {
+	background-image: url(../images/skin/database_edit.png);
+}
+
+
 
 /* CREATE/EDIT FORMS AND SHOW PAGES */
 
@@ -611,11 +621,18 @@ a.skip {
 	float:left;
 }
 
+.scaffold-form{
+	width: 60%;
+	float:left;
+}
+
 
 .choice{
 	width:40%;
 	float:left;
 }
+
+
 
 .reftable{
 	float:left;
@@ -639,4 +656,16 @@ a.skip {
 
 .fieldcontain .property-selector-button {
 	float: right;
+}
+
+.fieldcontain .ranking-selector-label{
+	color: #666666;
+	text-align: right;
+	width: 1%;
+	float: left;
+}
+
+.fieldcontain .ranking-selector {
+	display: block;
+	margin-left: 4%;
 }

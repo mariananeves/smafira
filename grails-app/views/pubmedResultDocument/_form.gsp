@@ -30,21 +30,21 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: pubmedResultDocumentInstance, field: 'similarity', 'error')} ">
+    <label for="similarity">
+        <g:message code="pubmedResultDocument.similarity.label" default="Similarity"/>
+
+    </label>
+    <g:field name="similarity" type="number" value="${pubmedResultDocumentInstance.similarity}"/>
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: pubmedResultDocumentInstance, field: 'relevance', 'error')} ">
     <label for="relevance">
         <g:message code="pubmedResultDocument.relevance.label" default="Relevance"/>
 
     </label>
     <g:field name="relevance" type="number" value="${pubmedResultDocumentInstance.relevance}"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: pubmedResultDocumentInstance, field: 'relevance2', 'error')} ">
-    <label for="relevance2">
-        <g:message code="pubmedResultDocument.relevance2.label" default="Relevance2"/>
-
-    </label>
-    <g:field name="relevance2" type="number" value="${pubmedResultDocumentInstance.relevance2}"/>
 
 </div>
 

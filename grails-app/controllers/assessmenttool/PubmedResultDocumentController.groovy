@@ -20,6 +20,7 @@ class PubmedResultDocumentController {
         respond PubmedResultDocument.list(params), model:[pubmedResultDocumentInstanceCount: PubmedResultDocument.count()]
     }
 
+
     def show(PubmedResultDocument pubmedResultDocumentInstance) {
         respond pubmedResultDocumentInstance
     }
@@ -74,7 +75,7 @@ class PubmedResultDocumentController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'pubmedResultDocument.label', default: 'PubmedResultDocument'), pubmedResultDocumentInstance.id])
-                redirect (controller: "pubmedReferenceDocument", action: "show", id: pubmedResultDocumentInstance.refDocId, params:['setRelevanceMode':params.setRelevanceMode, 'setAnimalTestMode': params.setAnimalTestMode])
+                redirect (controller: "pubmedReferenceDocument", action: "show", id: pubmedResultDocumentInstance.refDocId, params:['setSimilarityMode':params.setSimilarityMode, 'setRelevanceMode':params.setRelevanceMode, 'setAnimalTestMode': params.setAnimalTestMode])
 //                redirect pubmedResultDocumentInstance
             }
             '*'{ respond pubmedResultDocumentInstance, [status: OK] }

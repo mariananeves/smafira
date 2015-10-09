@@ -83,13 +83,13 @@ invokeTag('link','g',59,['controller':("pubmedReferenceDocument"),'action':("sho
 printHtmlPart(16)
 }
 printHtmlPart(22)
-invokeTag('message','g',67,['code':("pubmedResultDocument.relevance.label"),'default':("Relevance")],-1)
+invokeTag('message','g',67,['code':("pubmedResultDocument.similarity.label"),'default':("Similarity")],-1)
 printHtmlPart(23)
-invokeTag('fieldValue','g',70,['bean':(pubmedResultDocumentInstance),'field':("relevance")],-1)
+invokeTag('fieldValue','g',70,['bean':(pubmedResultDocumentInstance),'field':("similarity")],-1)
 printHtmlPart(24)
-invokeTag('message','g',76,['code':("pubmedResultDocument.relevance2.label"),'default':("Relevance2")],-1)
+invokeTag('message','g',76,['code':("pubmedResultDocument.relevance.label"),'default':("Relevance")],-1)
 printHtmlPart(25)
-invokeTag('fieldValue','g',79,['bean':(pubmedResultDocumentInstance),'field':("relevance2")],-1)
+invokeTag('fieldValue','g',79,['bean':(pubmedResultDocumentInstance),'field':("relevance")],-1)
 printHtmlPart(26)
 invokeTag('message','g',87,['code':("pubmedResultDocument.isAnimalTest.label"),'default':("Is Animal Test")],-1)
 printHtmlPart(27)
@@ -148,7 +148,7 @@ protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1425480139616L
+public static final long LAST_MODIFIED = 1432058208810L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

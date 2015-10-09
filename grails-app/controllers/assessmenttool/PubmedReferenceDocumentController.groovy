@@ -14,19 +14,20 @@ class PubmedReferenceDocumentController {
         respond PubmedReferenceDocument.list(params), model: [pubmedReferenceDocumentInstanceCount: PubmedReferenceDocument.count()]
     }
 
-    def show(PubmedReferenceDocument pubmedReferenceDocumentInstance) {
-        def results = PubmedResultDocument.findAllByRefDoc(pubmedReferenceDocumentInstance)
+    def show(Integer max, PubmedReferenceDocument pubmedReferenceDocumentInstance) {
+        params.max = Math.min(max ?: 10, 100)
+        def results = PubmedResultDocument.findAllByRefDoc(pubmedReferenceDocumentInstance, params)
 
+        if(!params.setSimilarityMode)
+            params.setSimilarityMode='97'
         if(!params.setRelevanceMode)
             params.setRelevanceMode='97'
-        if(!params.setRelevance2Mode)
-            params.setRelevance2Mode='97'
         if(!params.setAnimalTestMode)
             params.setAnimalTestMode='97'
 
-        results.sort{it.id}
+//        results.sort{it.id}
 
-        respond pubmedReferenceDocumentInstance, model: [results: results]
+        respond pubmedReferenceDocumentInstance, model: [results: results, pubmedResultDocumentInstanceCount: PubmedResultDocument.countByRefDoc(pubmedReferenceDocumentInstance)]
     }
 
     def create() {
@@ -55,6 +56,7 @@ class PubmedReferenceDocumentController {
             '*' { respond pubmedReferenceDocumentInstance, [status: CREATED] }
         }
     }
+
 
     def edit(PubmedReferenceDocument pubmedReferenceDocumentInstance) {
         respond pubmedReferenceDocumentInstance

@@ -29,7 +29,9 @@
 						<g:sortableColumn property="title" title="${message(code: 'pubmedResultDocument.title.label', default: 'Title')}" />
 					
 						<th><g:message code="pubmedResultDocument.refDoc.label" default="Ref Doc" /></th>
-					
+
+						<g:sortableColumn property="similarity" title="${message(code: 'pubmedResultDocument.similarity.label', default: 'Similarity')}" />
+
 						<g:sortableColumn property="relevance" title="${message(code: 'pubmedResultDocument.relevance.label', default: 'Relevance')}" />
 					
 						<g:sortableColumn property="isAnimalTest" title="${message(code: 'pubmedResultDocument.isAnimalTest.label', default: 'Is Animal Test')}" />
@@ -47,6 +49,8 @@
 						<td>${fieldValue(bean: pubmedResultDocumentInstance, field: "title")}</td>
 					
 						<td>${fieldValue(bean: pubmedResultDocumentInstance, field: "refDoc")}</td>
+
+						<td>${fieldValue(bean: pubmedResultDocumentInstance, field: "similarity")}</td>
 					
 						<td>${fieldValue(bean: pubmedResultDocumentInstance, field: "relevance")}</td>
 					

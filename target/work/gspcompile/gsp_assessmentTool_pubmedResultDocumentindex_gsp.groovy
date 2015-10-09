@@ -58,49 +58,53 @@ invokeTag('sortableColumn','g',29,['property':("title"),'title':(message(code: '
 printHtmlPart(14)
 invokeTag('message','g',31,['code':("pubmedResultDocument.refDoc.label"),'default':("Ref Doc")],-1)
 printHtmlPart(15)
-invokeTag('sortableColumn','g',33,['property':("relevance"),'title':(message(code: 'pubmedResultDocument.relevance.label', default: 'Relevance'))],-1)
-printHtmlPart(13)
-invokeTag('sortableColumn','g',35,['property':("isAnimalTest"),'title':(message(code: 'pubmedResultDocument.isAnimalTest.label', default: 'Is Animal Test'))],-1)
-printHtmlPart(13)
-invokeTag('sortableColumn','g',37,['property':("rank"),'title':(message(code: 'pubmedResultDocument.rank.label', default: 'Rank'))],-1)
+invokeTag('sortableColumn','g',33,['property':("similarity"),'title':(message(code: 'pubmedResultDocument.similarity.label', default: 'Similarity'))],-1)
 printHtmlPart(16)
+invokeTag('sortableColumn','g',35,['property':("relevance"),'title':(message(code: 'pubmedResultDocument.relevance.label', default: 'Relevance'))],-1)
+printHtmlPart(13)
+invokeTag('sortableColumn','g',37,['property':("isAnimalTest"),'title':(message(code: 'pubmedResultDocument.isAnimalTest.label', default: 'Is Animal Test'))],-1)
+printHtmlPart(13)
+invokeTag('sortableColumn','g',39,['property':("rank"),'title':(message(code: 'pubmedResultDocument.rank.label', default: 'Rank'))],-1)
+printHtmlPart(17)
 loop:{
 int i = 0
 for( pubmedResultDocumentInstance in (pubmedResultDocumentInstanceList) ) {
-printHtmlPart(17)
-expressionOut.print((i % 2) == 0 ? 'even' : 'odd')
 printHtmlPart(18)
+expressionOut.print((i % 2) == 0 ? 'even' : 'odd')
+printHtmlPart(19)
 createTagBody(3, {->
 expressionOut.print(fieldValue(bean: pubmedResultDocumentInstance, field: "pmid"))
 })
-invokeTag('link','g',45,['action':("show"),'id':(pubmedResultDocumentInstance.id)],3)
-printHtmlPart(19)
-expressionOut.print(fieldValue(bean: pubmedResultDocumentInstance, field: "title"))
-printHtmlPart(19)
-expressionOut.print(fieldValue(bean: pubmedResultDocumentInstance, field: "refDoc"))
-printHtmlPart(19)
-expressionOut.print(fieldValue(bean: pubmedResultDocumentInstance, field: "relevance"))
-printHtmlPart(19)
-expressionOut.print(fieldValue(bean: pubmedResultDocumentInstance, field: "isAnimalTest"))
-printHtmlPart(19)
-expressionOut.print(fieldValue(bean: pubmedResultDocumentInstance, field: "rank"))
+invokeTag('link','g',47,['action':("show"),'id':(pubmedResultDocumentInstance.id)],3)
 printHtmlPart(20)
+expressionOut.print(fieldValue(bean: pubmedResultDocumentInstance, field: "title"))
+printHtmlPart(20)
+expressionOut.print(fieldValue(bean: pubmedResultDocumentInstance, field: "refDoc"))
+printHtmlPart(21)
+expressionOut.print(fieldValue(bean: pubmedResultDocumentInstance, field: "similarity"))
+printHtmlPart(20)
+expressionOut.print(fieldValue(bean: pubmedResultDocumentInstance, field: "relevance"))
+printHtmlPart(20)
+expressionOut.print(fieldValue(bean: pubmedResultDocumentInstance, field: "isAnimalTest"))
+printHtmlPart(20)
+expressionOut.print(fieldValue(bean: pubmedResultDocumentInstance, field: "rank"))
+printHtmlPart(22)
 i++
 }
 }
-printHtmlPart(21)
-invokeTag('paginate','g',62,['total':(pubmedResultDocumentInstanceCount ?: 0)],-1)
-printHtmlPart(22)
-})
-invokeTag('captureBody','sitemesh',65,[:],1)
 printHtmlPart(23)
+invokeTag('paginate','g',66,['total':(pubmedResultDocumentInstanceCount ?: 0)],-1)
+printHtmlPart(24)
+})
+invokeTag('captureBody','sitemesh',69,[:],1)
+printHtmlPart(25)
 }
 public static final Map JSP_TAGS = new HashMap()
 protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1424182954972L
+public static final long LAST_MODIFIED = 1432058144649L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

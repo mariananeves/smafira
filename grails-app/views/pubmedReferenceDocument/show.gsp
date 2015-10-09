@@ -23,6 +23,8 @@
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
 				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+				<li><g:link class="corpus" action="getPubmedData" controller="pubmedData" id="${pubmedReferenceDocumentInstance.id}"><g:message code="default.pubmedData.label" args="[entityName]" /></g:link></li>
+				<li><g:link class="datamining" action="reranking" controller="reRanking" id="${pubmedReferenceDocumentInstance.id}"><g:message code="default.reranking.label" args="[entityName]" /></g:link></li>
 			</ul>
 		</div>
 		<div id="show-pubmedReferenceDocument" class="content scaffold-show" role="main">
@@ -65,7 +67,7 @@
 							Ähnlichkeit
 						</span>
 						<span class="property-selector">
-							<g:select id="setRelevanceMode" name="setRelevanceMode" from="${[97: 'alles', 99: 'nicht definiert', 98: 'nicht entscheidbar', 0: 'nicht ähnlich', 1: 'ähnlich', 2: 'sehr ähnlich'].entrySet()}" optionKey="key" optionValue="value" value="${params.setRelevanceMode ?: 97}"/>
+							<g:select id="setSimilarityMode" name="setSimilarityMode" from="${[97: 'alles', 99: 'nicht definiert', 98: 'nicht entscheidbar', 0: 'nicht ähnlich', 1: 'ähnlich', 2: 'sehr ähnlich'].entrySet()}" optionKey="key" optionValue="value" value="${params.setSimilarityMode ?: 97}"/>
 						</span>
 					</li>
 
@@ -74,7 +76,7 @@
 							Relevanz
 						</span>
 						<span class="property-selector">
-							<g:select id="setRelevance2Mode" name="setRelevance2Mode" from="${[97: 'alles', 99: 'nicht definiert', 98: 'nicht entscheidbar', 3: 'nicht relevant', 4: 'relevant'].entrySet()}" optionKey="key" optionValue="value" value="${params.setRelevance2Mode ?: 97}"/>
+							<g:select id="setRelevanceMode" name="setRelevanceMode" from="${[97: 'alles', 99: 'nicht definiert', 98: 'nicht entscheidbar', 3: 'nicht relevant', 4: 'relevant'].entrySet()}" optionKey="key" optionValue="value" value="${params.setRelevanceMode ?: 97}"/>
 						</span>
 					</li>
 
@@ -103,74 +105,103 @@
 		<div class="content reftable">
 			<h1>Ergebnisse</h1>
 
-			<table border="1">
-				<tr>
-					<th>Rang</th>
-					<th>PMID</th>
-					<th>Titel</th>
-					<th>Ähnlichkeit</th>
-					<th>Relevanz</th>
-					<th>Tierversuch</th>
-					<th>zuletzt geändert</th>
-					<th>Aktionen</th>
-				</tr>
+			<form name="filter" id="filter" method="get">
+				<ol class="property-list">
+					<li class="fieldcontain">
+						<span class="ranking-selector-label">
+							Ranking
+						</span>
+						<span class="ranking-selector">
+							<g:select id="setRankingMode" name="setRankingMode" from="${[0: 'Pubmed Similar Articles', 1: 'Data Mining: SMO'].entrySet()}" optionKey="key" optionValue="value" value="${params.setRankingMode ?: 0}"/>
+						</span>
+					</li>
+				</ol>
+			</form>
 
+			<table border="1">
+				<thead>
+					<tr>
+						<th>Rang</th>
+						<th>PMID</th>
+						<th>Titel</th>
+						<th>Ähnlichkeit</th>
+						<th>Relevanz</th>
+						<th>Tierversuch</th>
+						<th>Zusatzinformationen</th>
+						<th>zuletzt geändert</th>
+						<th>Aktionen</th>
+					</tr>
+				</thead>
+
+				<g:set var="similarityModeCheck" value="${Integer.parseInt(params.setSimilarityMode)}"/>
 				<g:set var="relevanceModeCheck" value="${Integer.parseInt(params.setRelevanceMode)}"/>
-				<g:set var="relevance2ModeCheck" value="${Integer.parseInt(params.setRelevance2Mode)}"/>
 				<g:set var="animalTestModeCheck" value="${Integer.parseInt(params.setAnimalTestMode)}"/>
 
-				<g:each in="${results}" var="resultDocument">
-					<g:if test="${((relevanceModeCheck ==97) || (resultDocument.relevance==relevanceModeCheck)) && ((relevance2ModeCheck ==97) || (resultDocument.relevance2==relevance2ModeCheck)) && ((animalTestModeCheck==97) || (resultDocument.isAnimalTest == animalTestModeCheck)) }">
-						<g:form url="[resource: resultDocument, action: 'update']" method="PUT">
-							<tr>
-								<g:hiddenField id="setRelevanceMode" name="setRelevanceMode" value="${relevanceModeCheck}"/>
-								<g:hiddenField id="setAnimalTestMode" name="setAnimalTestMode" value="${animalTestModeCheck}"/>
-								<td>${resultDocument.rank}</td>
-								<td><a href="http://www.ncbi.nlm.nih.gov/pubmed/${resultDocument.pmid}" target="_blank">${resultDocument.pmid}</a></td>
-								<td>
-									${resultDocument.title}
-									<div style="display: block;"><a href="javascript:toggleDetails('abstract${resultDocument.id}')" name="1" id="b-abstract${resultDocument.id}">Abstract anzeigen</a></div>
-									<div id="abstract${resultDocument.id}" style="display:none;">
-										<p>
-											<ckeditor:editor id="docAbstract${resultDocument.id}" name="docAbstract" toolbar="Mytoolbar" height="120px" width="90%">
-												${resultDocument.docAbstract}
-											</ckeditor:editor>
-											%{--<span style="font-size:75%">--}%
-												%{--${resultDocument.docAbstract}--}%
-											%{--</span>--}%
-										</p>
-									</div>
-								</td>
-								<td>
-									<g:select name="relevance" from="${[99: 'nicht definiert', 98: 'nicht entscheidbar', 0: 'nicht ähnlich', 1: 'ähnlich', 2: 'sehr ähnlich'].entrySet()}" optionKey="key" optionValue="value" value="${resultDocument.relevance}"/>
+				<tbody>
+					<g:each in="${results}" var="resultDocument">
+						<g:if test="${((similarityModeCheck ==97) || (resultDocument.similarity==similarityModeCheck)) && ((relevanceModeCheck ==97) || (resultDocument.relevance==relevanceModeCheck)) && ((animalTestModeCheck==97) || (resultDocument.isAnimalTest == animalTestModeCheck)) }">
+							<g:form url="[resource: resultDocument, action: 'update']" method="PUT">
+								<tr>
+									<g:hiddenField id="setSimilarityMode" name="setSimilarityMode" value="${similarityModeCheck}"/>
+									<g:hiddenField id="setRelevanceMode" name="setRelevanceMode" value="${relevanceModeCheck}"/>
+									<g:hiddenField id="setAnimalTestMode" name="setAnimalTestMode" value="${animalTestModeCheck}"/>
+									<td>${resultDocument.rank}</td>
+									<td><a href="http://www.ncbi.nlm.nih.gov/pubmed/${resultDocument.pmid}" target="_blank">${resultDocument.pmid}</a></td>
+									<td>
+										${resultDocument.title}
+										<div style="display: block;"><a href="javascript:toggleDetails('abstract${resultDocument.id}')" name="1" id="b-abstract${resultDocument.id}">Abstract anzeigen</a></div>
+										<div id="abstract${resultDocument.id}" style="display:none;">
+											<p>
+												<ckeditor:editor id="docAbstract${resultDocument.id}" name="docAbstract" toolbar="Mytoolbar" height="120px" width="90%">
+													${resultDocument.docAbstract}
+												</ckeditor:editor>
+												%{--<span style="font-size:75%">--}%
+													%{--${resultDocument.docAbstract}--}%
+												%{--</span>--}%
+											</p>
+										</div>
+									</td>
+									<td>
+										<g:select name="similarity" from="${[99: 'nicht definiert', 98: 'nicht entscheidbar', 0: 'nicht ähnlich', 1: 'ähnlich', 2: 'sehr ähnlich'].entrySet()}" optionKey="key" optionValue="value" value="${resultDocument.similarity}"/>
 
-								</td>
+									</td>
 
-								<td>
-									<g:select name="relevance2" from="${[99: 'nicht definiert', 98: 'nicht entscheidbar', 3: 'nicht relevant', 4: 'relevant'].entrySet()}" optionKey="key" optionValue="value" value="${resultDocument.relevance2}"/>
+									<td>
+										<g:select name="relevance" from="${[99: 'nicht definiert', 98: 'nicht entscheidbar', 3: 'nicht relevant', 4: 'relevant'].entrySet()}" optionKey="key" optionValue="value" value="${resultDocument.relevance}"/>
 
-								</td>
-								<td>
-									<g:select name="isAnimalTest" from="${[99: 'nicht definiert', 98: 'nicht entscheidbar', 0: 'nein', 1: 'ja', 2: 'sowohl als auch'].entrySet()}" optionKey="key" optionValue="value" value="${resultDocument.isAnimalTest}"/>
-								</td>
-								<td>${resultDocument.lastChange}</td>
+									</td>
+									<td>
+										<g:select name="isAnimalTest" from="${[99: 'nicht definiert', 98: 'nicht entscheidbar', 0: 'nein', 1: 'ja', 2: 'sowohl als auch'].entrySet()}" optionKey="key" optionValue="value" value="${resultDocument.isAnimalTest}"/>
+									</td>
+									<td>
+										<div style="display: block;"><a href="javascript:toggleInfoDetails('info${resultDocument.id}')" name="2" id="b-info${resultDocument.id}">Zusatzinformationen anzeigen</a></div>
+										<div id="info${resultDocument.id}" style="display:none;">
+											<p>
+												<g:textArea id="addInfo${resultDocument.id}" name="addInfo" value="${resultDocument.addInfo}" />
+											</p>
+										</div>
+									</td>
+									<td>${resultDocument.lastChange}</td>
 
-								<td>
-									<g:actionSubmit class="save" action="update" controller="pubmedResultDocument"
-													value="${message(code: 'default.button.update.label', default: 'Update')}" />
-									%{--<g:actionSubmit class="edit" action="update" value="Änderungen speichern"/>--}%
-								</td>
+									<td>
+										<g:actionSubmit class="save" action="update" controller="pubmedResultDocument"
+														value="${message(code: 'default.button.update.label', default: 'Update')}" />
+										%{--<g:actionSubmit class="edit" action="update" value="Änderungen speichern"/>--}%
+									</td>
 
-								%{--<fieldset class="buttons">--}%
-								%{--<g:link class="edit" action="edit" resource="${resultDocument}"><g:message code="default.button.edit.label" default="Edit" /></g:link>--}%
-								%{--<g:actionSubmit class="update" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');"></g:actionSubmit>--}%
-								%{--</fieldset>--}%
-							</tr>
-						</g:form>
-					</g:if>
-
-				</g:each>
+									%{--<fieldset class="buttons">--}%
+									%{--<g:link class="edit" action="edit" resource="${resultDocument}"><g:message code="default.button.edit.label" default="Edit" /></g:link>--}%
+									%{--<g:actionSubmit class="update" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');"></g:actionSubmit>--}%
+									%{--</fieldset>--}%
+								</tr>
+							</g:form>
+						</g:if>
+					</g:each>
+				</tbody>
 			</table>
+			<div class="pagination">
+				<g:paginate total="${pubmedResultDocumentInstanceCount ?: 0}" id="${params.id}"/>
+			</div>
 
 			<g:form url="[resource:pubmedReferenceDocumentInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">
@@ -179,6 +210,5 @@
 				</fieldset>
 			</g:form>
 		</div>
-
 	</body>
 </html>

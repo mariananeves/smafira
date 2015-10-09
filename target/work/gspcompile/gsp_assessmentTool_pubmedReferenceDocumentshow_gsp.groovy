@@ -78,27 +78,29 @@ invokeTag('fieldValue','g',51,['bean':(pubmedReferenceDocumentInstance),'field':
 printHtmlPart(23)
 }
 printHtmlPart(24)
-invokeTag('select','g',68,['id':("setRelevanceMode"),'name':("setRelevanceMode"),'from':([97: 'alles', 99: 'nicht definiert', 98: 'nicht entscheidbar', 0: 'nicht ähnlich', 1: 'ähnlich', 2: 'sehr ähnlich'].entrySet()),'optionKey':("key"),'optionValue':("value"),'value':(params.setRelevanceMode ?: 97)],-1)
+invokeTag('select','g',68,['id':("setSimilarityMode"),'name':("setSimilarityMode"),'from':([97: 'alles', 99: 'nicht definiert', 98: 'nicht entscheidbar', 0: 'nicht ähnlich', 1: 'ähnlich', 2: 'sehr ähnlich'].entrySet()),'optionKey':("key"),'optionValue':("value"),'value':(params.setSimilarityMode ?: 97)],-1)
 printHtmlPart(25)
-invokeTag('select','g',77,['id':("setRelevance2Mode"),'name':("setRelevance2Mode"),'from':([97: 'alles', 99: 'nicht definiert', 98: 'nicht entscheidbar', 3: 'nicht relevant', 4: 'relevant'].entrySet()),'optionKey':("key"),'optionValue':("value"),'value':(params.setRelevance2Mode ?: 97)],-1)
+invokeTag('select','g',77,['id':("setRelevanceMode"),'name':("setRelevanceMode"),'from':([97: 'alles', 99: 'nicht definiert', 98: 'nicht entscheidbar', 3: 'nicht relevant', 4: 'relevant'].entrySet()),'optionKey':("key"),'optionValue':("value"),'value':(params.setRelevanceMode ?: 97)],-1)
 printHtmlPart(26)
 invokeTag('select','g',86,['id':("setAnimalTestMode"),'name':("setAnimalTestMode"),'from':([97: 'alles', 99: 'nicht definiert', 98: 'nicht entscheidbar', 0: 'nein', 1: 'ja', 2: 'sowohl als auch'].entrySet()),'optionKey':("key"),'optionValue':("value"),'value':(params.setAnimalTestMode ?: 97)],-1)
 printHtmlPart(27)
-invokeTag('set','g',118,['var':("relevanceModeCheck"),'value':(Integer.parseInt(params.setRelevanceMode))],-1)
+invokeTag('set','g',118,['var':("similarityModeCheck"),'value':(Integer.parseInt(params.setSimilarityMode))],-1)
 printHtmlPart(28)
-invokeTag('set','g',119,['var':("relevance2ModeCheck"),'value':(Integer.parseInt(params.setRelevance2Mode))],-1)
+invokeTag('set','g',119,['var':("relevanceModeCheck"),'value':(Integer.parseInt(params.setRelevanceMode))],-1)
 printHtmlPart(28)
 invokeTag('set','g',120,['var':("animalTestModeCheck"),'value':(Integer.parseInt(params.setAnimalTestMode))],-1)
 printHtmlPart(29)
 for( resultDocument in (results) ) {
 printHtmlPart(30)
-if(true && (((relevanceModeCheck ==97) || (resultDocument.relevance==relevanceModeCheck)) && ((relevance2ModeCheck ==97) || (resultDocument.relevance2==relevance2ModeCheck)) && ((animalTestModeCheck==97) || (resultDocument.isAnimalTest == animalTestModeCheck)))) {
+if(true && (((similarityModeCheck ==97) || (resultDocument.similarity==similarityModeCheck)) && ((relevanceModeCheck ==97) || (resultDocument.relevance==relevanceModeCheck)) && ((animalTestModeCheck==97) || (resultDocument.isAnimalTest == animalTestModeCheck)))) {
 printHtmlPart(31)
 createTagBody(4, {->
 printHtmlPart(32)
-invokeTag('hiddenField','g',126,['id':("setRelevanceMode"),'name':("setRelevanceMode"),'value':(relevanceModeCheck)],-1)
+invokeTag('hiddenField','g',126,['id':("setSimilarityMode"),'name':("setSimilarityMode"),'value':(similarityModeCheck)],-1)
 printHtmlPart(33)
-invokeTag('hiddenField','g',127,['id':("setAnimalTestMode"),'name':("setAnimalTestMode"),'value':(animalTestModeCheck)],-1)
+invokeTag('hiddenField','g',127,['id':("setRelevanceMode"),'name':("setRelevanceMode"),'value':(relevanceModeCheck)],-1)
+printHtmlPart(33)
+invokeTag('hiddenField','g',128,['id':("setAnimalTestMode"),'name':("setAnimalTestMode"),'value':(animalTestModeCheck)],-1)
 printHtmlPart(34)
 expressionOut.print(resultDocument.rank)
 printHtmlPart(35)
@@ -119,20 +121,20 @@ printHtmlPart(42)
 expressionOut.print(resultDocument.docAbstract)
 printHtmlPart(43)
 })
-invokeTag('editor','ckeditor',135,['id':("docAbstract${resultDocument.id}"),'name':("docAbstract"),'toolbar':("Mytoolbar"),'height':("120px"),'width':("90%")],5)
+invokeTag('editor','ckeditor',136,['id':("docAbstract${resultDocument.id}"),'name':("docAbstract"),'toolbar':("Mytoolbar"),'height':("120px"),'width':("90%")],5)
 printHtmlPart(44)
-invokeTag('select','g',145,['name':("relevance"),'from':([99: 'nicht definiert', 98: 'nicht entscheidbar', 0: 'nicht ähnlich', 1: 'ähnlich', 2: 'sehr ähnlich'].entrySet()),'optionKey':("key"),'optionValue':("value"),'value':(resultDocument.relevance)],-1)
+invokeTag('select','g',146,['name':("similarity"),'from':([99: 'nicht definiert', 98: 'nicht entscheidbar', 0: 'nicht ähnlich', 1: 'ähnlich', 2: 'sehr ähnlich'].entrySet()),'optionKey':("key"),'optionValue':("value"),'value':(resultDocument.similarity)],-1)
 printHtmlPart(45)
-invokeTag('select','g',150,['name':("relevance2"),'from':([99: 'nicht definiert', 98: 'nicht entscheidbar', 3: 'nicht relevant', 4: 'relevant'].entrySet()),'optionKey':("key"),'optionValue':("value"),'value':(resultDocument.relevance2)],-1)
+invokeTag('select','g',151,['name':("relevance"),'from':([99: 'nicht definiert', 98: 'nicht entscheidbar', 3: 'nicht relevant', 4: 'relevant'].entrySet()),'optionKey':("key"),'optionValue':("value"),'value':(resultDocument.relevance)],-1)
 printHtmlPart(46)
-invokeTag('select','g',154,['name':("isAnimalTest"),'from':([99: 'nicht definiert', 98: 'nicht entscheidbar', 0: 'nein', 1: 'ja', 2: 'sowohl als auch'].entrySet()),'optionKey':("key"),'optionValue':("value"),'value':(resultDocument.isAnimalTest)],-1)
+invokeTag('select','g',155,['name':("isAnimalTest"),'from':([99: 'nicht definiert', 98: 'nicht entscheidbar', 0: 'nein', 1: 'ja', 2: 'sowohl als auch'].entrySet()),'optionKey':("key"),'optionValue':("value"),'value':(resultDocument.isAnimalTest)],-1)
 printHtmlPart(47)
 expressionOut.print(resultDocument.lastChange)
 printHtmlPart(48)
-invokeTag('actionSubmit','g',159,['class':("save"),'action':("update"),'controller':("pubmedResultDocument"),'value':(message(code: 'default.button.update.label', default: 'Update'))],-1)
+invokeTag('actionSubmit','g',160,['class':("save"),'action':("update"),'controller':("pubmedResultDocument"),'value':(message(code: 'default.button.update.label', default: 'Update'))],-1)
 printHtmlPart(49)
 })
-invokeTag('form','g',160,['url':([resource: resultDocument, action: 'update']),'method':("PUT")],4)
+invokeTag('form','g',161,['url':([resource: resultDocument, action: 'update']),'method':("PUT")],4)
 printHtmlPart(30)
 }
 printHtmlPart(29)
@@ -141,17 +143,17 @@ printHtmlPart(50)
 createTagBody(2, {->
 printHtmlPart(51)
 createTagBody(3, {->
-invokeTag('message','g',165,['code':("default.button.edit.label"),'default':("Edit")],-1)
+invokeTag('message','g',166,['code':("default.button.edit.label"),'default':("Edit")],-1)
 })
-invokeTag('link','g',165,['class':("edit"),'action':("edit"),'resource':(pubmedReferenceDocumentInstance)],3)
+invokeTag('link','g',166,['class':("edit"),'action':("edit"),'resource':(pubmedReferenceDocumentInstance)],3)
 printHtmlPart(30)
-invokeTag('actionSubmit','g',166,['class':("delete"),'action':("delete"),'value':(message(code: 'default.button.delete.label', default: 'Delete')),'onclick':("return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');")],-1)
+invokeTag('actionSubmit','g',167,['class':("delete"),'action':("delete"),'value':(message(code: 'default.button.delete.label', default: 'Delete')),'onclick':("return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');")],-1)
 printHtmlPart(52)
 })
-invokeTag('form','g',166,['url':([resource:pubmedReferenceDocumentInstance, action:'delete']),'method':("DELETE")],2)
+invokeTag('form','g',167,['url':([resource:pubmedReferenceDocumentInstance, action:'delete']),'method':("DELETE")],2)
 printHtmlPart(53)
 })
-invokeTag('captureBody','sitemesh',166,[:],1)
+invokeTag('captureBody','sitemesh',167,[:],1)
 printHtmlPart(54)
 }
 public static final Map JSP_TAGS = new HashMap()
@@ -159,7 +161,7 @@ protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1425551844594L
+public static final long LAST_MODIFIED = 1432057846348L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

@@ -33,3 +33,14 @@ function toggleDetails(id) {
 	}
 }
 
+function toggleInfoDetails(id) {
+	var item = document.getElementById(id);
+	var but = document.getElementById('b-' + id);
+	if (item.style.display == 'none') {
+		item.style.display = ''
+		but.innerHTML = "Zusatzinformationen verbergen";
+	} else {
+		item.style.display = 'none'
+		but.innerHTML = "Zusatzinformationen anzeigen";
+	}
+}

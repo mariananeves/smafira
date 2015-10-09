@@ -1,12 +1,15 @@
 dataSource {
     pooled = true
     jmxExport = true
+    driverClassName = "com.mysql.jdbc.Driver"
+    username = "root"
+    password = ""
 //    driverClassName = "com.mysql.jdbc.Driver"
 //    username = "root"
-//    password = ""
-    driverClassName = "org.postgresql.Driver"
-    username = "assessment"
-    password = "assessment01"
+//    password = "Admin4MySql"
+//    driverClassName = "org.postgresql.Driver"
+//    username = "assessment"
+//    password = "assessment01"
 }
 hibernate {
     cache.use_second_level_cache = true
@@ -23,24 +26,24 @@ environments {
     development {
         dataSource {
             dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
-//            url = "jdbc:mysql://localhost/pubmed_assessments"
-            url = "jdbc:postgresql://fuedb.gesis.intra/assessment-test"
+            url = "jdbc:mysql://localhost/assessment_test"
+//            url = "jdbc:postgresql://fuedb.gesis.intra/assessment-test"
             logSql = true
         }
     }
     test {
         dataSource {
             dbCreate = "update"
-//            url = "jdbc:mysql://localhost/pubmed_assessments"
-            url = "jdbc:postgresql://fuedb.gesis.intra/assessment-test"
+            url = "jdbc:mysql://localhost/assessment_test"
+//            url = "jdbc:postgresql://fuedb.gesis.intra/assessment-test"
         }
     }
     production {
         dataSource {
             logSql = true
             dbCreate = "update"
-//            url = "jdbc:mysql://localhost/pubmed_assessments"
-            url = "jdbc:postgresql://fuedb.gesis.intra/assessment"
+            url = "jdbc:mysql://localhost/assessment"
+//            url = "jdbc:postgresql://fuedb.gesis.intra/assessment"
             properties {
                // See http://grails.org/doc/latest/guide/conf.html#dataSource for documentation
                jmxEnabled = true
