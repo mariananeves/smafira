@@ -16,6 +16,14 @@ class PubmedReferenceDocumentController {
 
     def show(Integer max, PubmedReferenceDocument pubmedReferenceDocumentInstance) {
         params.max = Math.min(max ?: 10, 100)
+        if (!params.sort) {
+            params.sort = "rank"
+            params.order = "asc"
+        }
+        else{
+            params.order = "asc"
+        }
+
         def results = PubmedResultDocument.findAllByRefDoc(pubmedReferenceDocumentInstance, params)
 
         if(!params.setSimilarityMode)

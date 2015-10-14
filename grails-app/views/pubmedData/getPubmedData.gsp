@@ -49,7 +49,7 @@
 
 		<div class="content scaffold-form">
 			<h1>Pubmed-Dokumente laden</h1>
-			<form name="data" id="data" method="get">
+			<form name="data" id="data" url="[resource:pubmedReferenceDocumentInstance, action:'loadData']" method="get">
 				<ol class="property-list">
 					<li class="fieldcontain">
 						<span class="property-selector-label">
@@ -61,7 +61,7 @@
 					</li>
 				</ol>
 				<fieldset class="buttons">
-					<g:submitButton name="loadDocuments" class="save" value="${message(code: 'default.button.loadDocuments.label', default: 'Dokumente laden')}" />
+					<g:actionSubmit action="loadData" name="loadDocuments" id="loadDocuments" class="save" value="${message(code: 'default.button.loadDocuments.label', default: 'Dokumente laden')}" />
 				</fieldset>
 			</form>
 

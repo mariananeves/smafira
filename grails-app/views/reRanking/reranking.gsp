@@ -47,7 +47,7 @@
 
 	<div class="content scaffold-form">
 		<h1>Re-Ranking</h1>
-		<form name="data" id="data" method="get">
+		<form name="data" id="data" url="[resource:pubmedReferenceDocumentInstance, action:'send']" method="get">
 			<ol class="property-list">
 
 				<li class="fieldcontain">
@@ -55,7 +55,7 @@
 						Data Mining Methode
 					</span>
 					<span class="property-selector">
-						<g:select id="setDataMiningMethod" name="setDataMiningMethod" from="${[1: 'SMO', 2: 'NaiveBayes', 3: 'BayesNet', 4: 'JRip', 5: 'J48', 6: 'LWL'].entrySet()}" optionKey="key" optionValue="value" value="${params.setDataMiningMethod ?: 0}"/>
+						<g:select id="setDataMiningMethod" name="setDataMiningMethod" from="${[rankSMO: 'SMO', rankBayes: 'NaiveBayes', rankBayesNet: 'BayesNet', rankJRIP: 'JRip', rankJ48: 'J48', rankLWL: 'LWL'].entrySet()}" optionKey="key" optionValue="value" value="${params.setDataMiningMethod ?: 0}"/>
 					</span>
 				</li>
 				<li class="fieldcontain">
@@ -97,79 +97,23 @@
 				</li>
 				<li class="fieldcontain">
 					<span class="property-selector-label">
-						Volltext-URL
+						Volltext (Journal, URL, freie Verfügbarkeit)
 					</span>
 					<span class="property-selector">
-						<g:checkBox name="fulltextUrl_check" value="${true}"/>
+						<g:checkBox name="fulltext_check" value="${true}"/>
 					</span>
 				</li>
 				<li class="fieldcontain">
 					<span class="property-selector-label">
-						Volltext-Freestatus
+						MeSH
 					</span>
 					<span class="property-selector">
-						<g:checkBox name="fulltextFreestatus_check" value="${true}"/>
-					</span>
-				</li>
-				<li class="fieldcontain">
-					<span class="property-selector-label">
-						Journal
-					</span>
-					<span class="property-selector">
-						<g:checkBox name="fulltextJournal_check" value="${true}"/>
-					</span>
-				</li>
-				<li class="fieldcontain">
-					<span class="property-selector-label">
-						MeSH-Terme
-					</span>
-					<span class="property-selector">
-						<g:checkBox name="meshterms_check" value="${true}"/>
-					</span>
-				</li>
-				<li class="fieldcontain">
-					<span class="property-selector-label">
-						MeSH-UI
-					</span>
-					<span class="property-selector">
-						<g:checkBox name="meshui_check" value="${true}"/>
-					</span>
-				</li>
-				<li class="fieldcontain">
-					<span class="property-selector-label">
-						MeSH-Majortopic
-					</span>
-					<span class="property-selector">
-						<g:checkBox name="meshmajortopic_check" value="${true}"/>
-					</span>
-				</li>
-				<li class="fieldcontain">
-					<span class="property-selector-label">
-						MeSH-Qualifier
-					</span>
-					<span class="property-selector">
-						<g:checkBox name="qualifier_check" value="${true}"/>
-					</span>
-				</li>
-				<li class="fieldcontain">
-					<span class="property-selector-label">
-						MeSH-Qualifier-UI
-					</span>
-					<span class="property-selector">
-						<g:checkBox name="qualifierUi_check" value="${true}"/>
-					</span>
-				</li>
-				<li class="fieldcontain">
-					<span class="property-selector-label">
-						MeSH-Qualifier-Majortopic
-					</span>
-					<span class="property-selector">
-						<g:checkBox name="qualifierMajortopic_check" value="${true}"/>
+						<g:checkBox name="mesh_check" value="${true}"/>
 					</span>
 				</li>
 			</ol>
 			<fieldset class="buttons">
-				<g:submitButton name="rerank" class="save" value="${message(code: 'default.button.rerank.label', default: 'Berechnen')}" />
+				<g:actionSubmit name="rerankButton" id="rerankButton" action="send" class="save" value="${message(code: 'default.button.rerank.label', default: 'Berechnen')}" />
 			</fieldset>
 		</form>
 

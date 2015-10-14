@@ -1,12 +1,12 @@
 dataSource {
     pooled = true
     jmxExport = true
-    driverClassName = "com.mysql.jdbc.Driver"
-    username = "root"
-    password = ""
 //    driverClassName = "com.mysql.jdbc.Driver"
 //    username = "root"
-//    password = "Admin4MySql"
+//    password = ""
+    driverClassName = "com.mysql.jdbc.Driver"
+    username = "root"
+    password = "Admin4MySql"
 //    driverClassName = "org.postgresql.Driver"
 //    username = "assessment"
 //    password = "assessment01"

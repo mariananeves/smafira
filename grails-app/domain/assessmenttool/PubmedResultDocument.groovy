@@ -13,6 +13,7 @@ class PubmedResultDocument {
     Integer isAnimalTest
     Integer rank
     Date lastChange = new Date()
+    Integer rankSMO
 
 
 
@@ -28,5 +29,10 @@ class PubmedResultDocument {
         pmcid blank: true, nullable: true
         docAbstract blank: true, nullable: true, maxSize: 10000
         addInfo blank: true, nullable: true, maxSize: 10000
+        rankSMO blank: true, nullable: true
+    }
+
+    static mapping = {
+        rankSMO defaultValue: 0
     }
 }

@@ -105,14 +105,14 @@
 		<div class="content reftable">
 			<h1>Ergebnisse</h1>
 
-			<form name="filter" id="filter" method="get">
+			<form name="sortForm" id="sortForm" method="get">
 				<ol class="property-list">
 					<li class="fieldcontain">
 						<span class="ranking-selector-label">
 							Ranking
 						</span>
 						<span class="ranking-selector">
-							<g:select id="setRankingMode" name="setRankingMode" from="${[0: 'Pubmed Similar Articles', 1: 'Data Mining: SMO'].entrySet()}" optionKey="key" optionValue="value" value="${params.setRankingMode ?: 0}"/>
+							<g:select id="sort" name="sort" from="${[rank: 'Pubmed Similar Articles', rankSMO: 'Data Mining: SMO'].entrySet()}" optionKey="key" optionValue="value" value="${params.sort ?: rank}" onchange="submit()"/>
 						</span>
 					</li>
 				</ol>
@@ -145,7 +145,12 @@
 									<g:hiddenField id="setSimilarityMode" name="setSimilarityMode" value="${similarityModeCheck}"/>
 									<g:hiddenField id="setRelevanceMode" name="setRelevanceMode" value="${relevanceModeCheck}"/>
 									<g:hiddenField id="setAnimalTestMode" name="setAnimalTestMode" value="${animalTestModeCheck}"/>
-									<td>${resultDocument.rank}</td>
+									<td>
+										<g:if test="${params.sort == 'rank'}">${resultDocument.rank}</g:if>
+										<g:elseif test="${params.sort == 'rankSMO'}">${resultDocument.rankSMO}</g:elseif>
+										%{--(${resultDocument.rank})--}%
+										<g:else>${resultDocument.rank}</g:else>
+									</td>
 									<td><a href="http://www.ncbi.nlm.nih.gov/pubmed/${resultDocument.pmid}" target="_blank">${resultDocument.pmid}</a></td>
 									<td>
 										${resultDocument.title}
